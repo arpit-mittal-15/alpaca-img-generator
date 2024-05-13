@@ -1,0 +1,130 @@
+body{
+    height: 99%;
+    width: 99%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    gap: 10px;
+    background-color: rgb(161, 161, 161);
+}
+header{
+    box-sizing: border-box;
+    height: 100px;
+    width: 100%;
+    font-size: 3.5vw;
+    font-weight: 1000;
+    padding-left: 5%;
+    align-content: center;
+    color: rgb(51, 51, 144);
+}
+
+/* ----------------- ALPACA ------------------ */
+#alpaca{
+    height: calc(100vh - 250px);
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    container-type: size;
+}
+#alpaca-container{
+    height: 95cqh;
+    width: 75cqh;
+    border: 2px solid black;
+    position: relative;
+}
+.alpaca-parts{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.part{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+#alpaca-nose{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+#alpaca-hair-bang{
+    left: -2%;
+}
+.visible{
+    visibility: visible;
+}
+#alpaca-editor{
+    box-sizing: border-box;
+    height: 95%;
+    width: 60%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#alpaca-accessory-options{
+    height: 50%;
+    width: 90%;
+}
+.options-header{
+    font-size: 1.5vw;
+    font-weight: bold;
+    padding-left: 20px;
+    text-transform: uppercase;
+    margin: 0px 0px 20px 0px;
+}
+.option{
+    margin: 10px 15px;
+    padding: 10px 25px;
+    font-size: 1.5vw;
+    border: 2px solid rgb(68, 68, 205);
+    border-radius: 30px;
+    color: rgb(68, 68, 205);
+    cursor: pointer;
+    float: left;
+}
+.option:not(.active):hover{
+    background-color: rgb(132, 132, 255);
+    color: rgb(209, 209, 209);
+}
+.active{
+    background-color: rgb(68, 68, 205);
+    color: rgb(209, 209, 209);
+}
+#alpaca-style-options{
+    height: 40%;
+    width: 90%;
+}
+.styles-container{
+    display: none;
+}
+.displaying{
+    display: block;
+}
+.bg{
+    height: 50px;
+    width: 50px;
+    padding: 0;
+}
+.bg > img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    padding: 0px;
+}
+#alpaca-options{
+    box-sizing: border-box;
+    height: 100px;
+    width: 100%;
+    align-content: center;
+    padding-left: 6%;
+}
+.alpaca-options{
+    height: 45%;
+    width: 10%;
+    margin-right: 3%;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="html2canvas.js"></script>
+    <title>Alpaca Img Generator</title>
+</head>
+<body onload="addEvent()">
+    <header>ALPACA GENERATOR</header>
+    <div id="alpaca">
+        <div id="alpaca-container">
+            <div class="alpaca-parts" id="alpaca-parts">
+                <img class="part visible alpaca-background" id="alpaca-background-blue50" src="alpaca/backgrounds/blue50.png">
+                <img class="part visible alpaca-neck" id="alpaca-neck-default" src="alpaca/neck/default.png">
+                <img class="part visible alpaca-ears" id="alpaca-ears-default" src="alpaca/ears/default.png">
+                <img id="alpaca-nose" src="alpaca/nose.png">
+                <img class="part visible alpaca-hair" id="alpaca-hair-default" src="alpaca/hair/default.png">
+                <img class="part visible alpaca-mouth" id="alpaca-mouth-default" src="alpaca/mouth/default.png">
+                <img class="part visible alpaca-eyes" id="alpaca-eyes-default" src="alpaca/eyes/default.png">
+                <img class="part visible alpaca-leg" id="alpaca-leg-default" src="alpaca/leg/default.png">
+                <img class="part visible alpaca-accessory" id="alpaca-accessory-headphone" src="alpaca/accessories/headphone.png">
+            </div>
+        </div>
+        <div id="alpaca-editor">
+            <div id="alpaca-accessory-options">
+                <div class="options-header" id="accessory-options-header">Accessorize the alpaca's</div>
+                <div class="option accessories active" id="accessory-hair">Hair</div>
+                <div class="option accessories" id="accessory-ears">Ears</div>
+                <div class="option accessories" id="accessory-eyes">Eyes</div>
+                <div class="option accessories" id="accessory-mouth">Mouth</div>
+                <div class="option accessories" id="accessory-neck">Neck</div>
+                <div class="option accessories" id="accessory-leg">Leg</div>
+                <div class="option accessories" id="accessory-accessory">Accessories</div>
+                <div class="option accessories" id="accessory-background">Background</div>
+            </div>
+            <div id="alpaca-style-options">
+                <div class="options-header" id="style-options-header">Style</div>
+                <div class="styles-container" id="style-background">
+                    <div class="option styles bg active" id="style-background-blue50"><img src="alpaca/backgrounds/blue50.png"></div>
+                    <div class="option styles bg" id="style-background-blue60"><img src="alpaca/backgrounds/blue60.png"></div>
+                    <div class="option styles bg" id="style-background-blue70"><img src="alpaca/backgrounds/blue70.png"></div>
+                    <div class="option styles bg" id="style-background-darkblue30"><img src="alpaca/backgrounds/darkblue30.png"></div>
+                    <div class="option styles bg" id="style-background-darkblue50"><img src="alpaca/backgrounds/darkblue50.png"></div>
+                    <div class="option styles bg" id="style-background-darkblue70"><img src="alpaca/backgrounds/darkblue70.png"></div>
+                    <div class="option styles bg" id="style-background-green50"><img src="alpaca/backgrounds/green50.png"></div>
+                    <div class="option styles bg" id="style-background-green60"><img src="alpaca/backgrounds/green60.png"></div>
+                    <div class="option styles bg" id="style-background-green70"><img src="alpaca/backgrounds/green70.png"></div>
+                    <div class="option styles bg" id="style-background-grey40"><img src="alpaca/backgrounds/grey40.png"></div>
+                    <div class="option styles bg" id="style-background-grey70"><img src="alpaca/backgrounds/grey70.png"></div>
+                    <div class="option styles bg" id="style-background-grey80"><img src="alpaca/backgrounds/grey80.png"></div>
+                    <div class="option styles bg" id="style-background-red50"><img src="alpaca/backgrounds/red50.png"></div>
+                    <div class="option styles bg" id="style-background-red60"><img src="alpaca/backgrounds/red60.png"></div>
+                    <div class="option styles bg" id="style-background-red70"><img src="alpaca/backgrounds/red70.png"></div>
+                    <div class="option styles bg" id="style-background-yellow50"><img src="alpaca/backgrounds/yellow50.png"></div>
+                    <div class="option styles bg" id="style-background-yellow60"><img src="alpaca/backgrounds/yellow60.png"></div>
+                    <div class="option styles bg" id="style-background-yellow70"><img src="alpaca/backgrounds/yellow70.png"></div>
+                </div>
+                <div class="styles-container" id="style-neck">
+                    <div class="option styles active" id="style-neck-default">Default</div>
+                    <div class="option styles" id="style-neck-backward">Backwards</div>
+                    <div class="option styles" id="style-neck-forward">Forwards</div>
+                    <div class="option styles" id="style-neck-thick">Thick</div>
+                </div>
+                <div class="styles-container" id="style-ears">
+                    <div class="option styles active" id="style-ears-default">Default</div>
+                    <div class="option styles" id="style-ears-backward">Backwards</div>
+                    <div class="option styles" id="style-ears-forward">Forwards</div>
+                </div>
+                <div class="styles-container displaying" id="style-hair">
+                    <div class="option styles active" id="style-hair-default">Default</div>
+                    <div class="option styles" id="style-hair-bang">Bang</div>
+                    <div class="option styles" id="style-hair-curls">Curls</div>
+                    <div class="option styles" id="style-hair-elegant">Elegant</div>
+                    <div class="option styles" id="style-hair-quiff">Quiff</div>
+                    <div class="option styles" id="style-hair-short">Short</div>
+                </div>
+                <div class="styles-container" id="style-eyes">
+                    <div class="option styles active" id="style-eyes-default">Default</div>
+                    <div class="option styles" id="style-eyes-angry">Angry</div>
+                    <div class="option styles" id="style-eyes-naughty">Naughty</div>
+                    <div class="option styles" id="style-eyes-panda">Panda</div>
+                    <div class="option styles" id="style-eyes-smart">Smart</div>
+                    <div class="option styles" id="style-eyes-star">Star</div>
+                </div>
+                <div class="styles-container" id="style-mouth">
+                    <div class="option styles active" id="style-mouth-default">Default</div>
+                    <div class="option styles" id="style-mouth-astonished">Astonished</div>
+                    <div class="option styles" id="style-mouth-eating">Eating</div>
+                    <div class="option styles" id="style-mouth-laugh">Laugh</div>
+                    <div class="option styles" id="style-mouth-tongue">Tongue</div>
+                </div>
+                <div class="styles-container" id="style-leg">
+                    <div class="option styles active" id="style-leg-default">Default</div>
+                    <div class="option styles" id="style-leg-bubble">Bubble-Tea</div>
+                    <div class="option styles" id="style-leg-cookie">Cookie</div>
+                    <div class="option styles" id="style-leg-game">Game-Console</div>
+                    <div class="option styles" id="style-leg-backward">Backwards</div>
+                    <div class="option styles" id="style-leg-forward">Forwards</div>
+                </div>
+                <div class="styles-container" id="style-accessory">
+                    <div class="option styles active" id="style-accessory-headphone">Headphones</div>
+                    <div class="option styles" id="style-accessory-earings">Earrings</div>
+                    <div class="option styles" id="style-accessory-flower">Flowers</div>
+                    <div class="option styles" id="style-accessory-glasses">Glasses</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alpaca-options">
+        <button class="alpaca-options" id="random" onclick="random()">Random</button>
+        <button class="alpaca-options" id="download" onclick="download()">Download</button>
+    </div>
+</body>
+</html>
